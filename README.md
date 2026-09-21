@@ -1,0 +1,1 @@
+# AI Bottleneck Map\n\nFree educational click magnet.\n
