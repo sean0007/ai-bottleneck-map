@@ -1,15 +1,49 @@
 import Link from "next/link";
-import { bottlenecks } from "@/lib/bottlenecks";
+import { getFeaturedBottleneck, getMapBottlenecks } from "@/lib/bottlenecks";
 
 export function BottleneckMap() {
+  const featured = getFeaturedBottleneck();
+  const rest = getMapBottlenecks().filter((item) => item.slug !== featured.slug);
+
   return (
     <section aria-label="Interactive bottleneck map" className="space-y-8">
       <div className="relative overflow-hidden rounded-3xl border border-line bg-panel/80 p-4 sm:p-8">
-        <p className="mb-6 font-mono text-[11px] tracking-[0.28em] text-muted uppercase">
-          Six nodes · click any constraint
+        <p className="mb-4 font-mono text-[11px] tracking-[0.28em] text-muted uppercase">
+          Hero node · electricity · then the rest of the map
         </p>
+        <Link
+          href={`/b/${featured.slug}`}
+          className="group relative mb-3 flex min-h-[160px] flex-col justify-between overflow-hidden rounded-2xl border border-orange-400/30 bg-black/40 p-5 transition hover:-translate-y-0.5 hover:border-orange-300/50 sm:min-h-[180px] sm:p-6"
+          style={{ boxShadow: `inset 4px 0 0 ${featured.color}` }}
+        >
+          <div
+            className="pointer-events-none absolute -right-10 -top-12 h-48 w-48 rounded-full blur-3xl"
+            style={{ background: featured.colorSoft }}
+          />
+          <div className="flex items-center justify-between gap-3">
+            <span className="font-mono text-[11px] tracking-[0.22em] text-[#ff6b4a] uppercase">
+              Hero bottleneck · {featured.number} {featured.title}
+            </span>
+            <span
+              className="h-3 w-3 rounded-full"
+              style={{ background: featured.color, boxShadow: `0 0 16px ${featured.color}` }}
+            />
+          </div>
+          <div className="mt-4 max-w-3xl">
+            <h2 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl">
+              Chip production can ramp. The grid does not.
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
+              {featured.threadLine} Click for why electricity binds — and which
+              public names get cited in that discussion.
+            </p>
+          </div>
+          <span className="mt-6 font-mono text-[11px] tracking-[0.18em] text-foreground/80 uppercase group-hover:text-foreground">
+            Open the power node →
+          </span>
+        </Link>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {bottlenecks.map((item) => (
+          {rest.map((item) => (
             <Link
               key={item.slug}
               href={`/b/${item.slug}`}

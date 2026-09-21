@@ -5,38 +5,40 @@ import { NumberedThread } from "@/components/numbered-thread";
 
 export default function Home() {
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:py-16">
+    <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-10">
       <section className="max-w-4xl">
         <p className="font-mono text-[11px] tracking-[0.28em] text-amber uppercase">
           If you’re under 45 · free educational map
         </p>
-        <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight text-foreground sm:text-7xl">
+        <h1 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight text-foreground sm:text-6xl">
           The AI boom isn’t just chips — it’s the bottlenecks.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Jensen Huang, Lisa Su, and the hyperscalers keep describing the same
-          physical constraints: memory, light, power, space, and the boxes that
-          hold the chips. This is an interactive map of those six binds — not a
-          stock-pick thread, not a get-rich pitch. Click a node. Learn why it
-          bottlenecks. Share the card.
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+          Elon Musk’s public version of the bind: data-center chip production can
+          ramp, while electrical output outside China stays relatively flat.
+          This map treats{" "}
+          <Link href="/b/power" className="text-foreground underline decoration-[#ff6b4a]/70 underline-offset-4">
+            power / electricity
+          </Link>{" "}
+          as the hero constraint. Educational only — not a stock pick.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/quiz"
+            href="/b/power"
             className="rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-black hover:bg-amber/90"
           >
-            Where’s your stack constrained?
+            Start with electricity
           </Link>
           <Link
-            href="/digest"
+            href="/quiz"
             className="rounded-full border border-white/15 px-5 py-2.5 text-sm hover:bg-white/5"
           >
-            Free weekly map update
+            Where’s your stack constrained?
           </Link>
         </div>
       </section>
 
-      <div className="mt-14">
+      <div className="mt-8">
         <BottleneckMap />
       </div>
 
@@ -72,7 +74,7 @@ export default function Home() {
       </section>
 
       <div className="mt-16">
-        <DigestCta />
+        <DigestCta defaultBottleneck="power" />
       </div>
     </div>
   );

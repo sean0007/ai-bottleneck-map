@@ -18,6 +18,7 @@ export type Bottleneck = {
   colorSoft: string;
   examples: ExampleCompany[];
   privateOrAdjacent?: string;
+  featured?: boolean;
 };
 
 export const bottlenecks: Bottleneck[] = [
@@ -149,15 +150,16 @@ export const bottlenecks: Bottleneck[] = [
     number: "04",
     title: "Power",
     shortTitle: "Power",
-    threadLine: "A cluster is a power plant with a parking lot. The grid can say no.",
+    featured: true,
+    threadLine: "Chip production can ramp. Electricity does not appear because a cluster was funded.",
     oneLiner:
-      "Megawatts, transformers, interconnection queues, and cooling decide whether a funded campus can actually turn on.",
-    whyHeadline: "Why power bottlenecks",
+      "Accelerators can be ordered on a factory calendar. Megawatts, transformers, and interconnection queues cannot. Electrical supply is the bind that does not care about a GPU keynote.",
+    whyHeadline: "Why power — electricity — is the hero bottleneck",
     why: [
-      "AI clusters draw continuous, dense electricity and dump it as heat. Land with fiber is not enough; the site needs a path to generation, transmission, substations, and transformers that can be delivered on a human timescale.",
+      "Public remarks from Elon Musk have framed a mismatch that keeps showing up in AI-infrastructure talk: chip production for data centers can scale on a manufacturing curve, while electrical output — especially outside China — stays relatively flat. The cluster still needs a grid that exists in the physical world.",
+      "AI halls draw continuous, dense electricity and dump it as heat. Land with fiber is not enough; the site needs a path to generation, transmission, substations, and transformers that can be delivered on a human timescale. There is no spare electricity that materializes because chips were allocated.",
       "Interconnection queues and high-voltage equipment are industrial products with long lead times. Public utility and developer commentary often treats “we leased the land” as the beginning of the power story, not the end.",
-      "Cooling is part of the same node on this map: liquid loops, heat rejection, and the electrical gear that feeds them. A rack that cannot be cooled is a rack that cannot be filled.",
-      "When compute supply improves, power is one of the constraints most likely to become the public talking point next — because you cannot software-update a substation.",
+      "Cooling is part of the same node on this map: liquid loops, heat rejection, and the electrical gear that feeds them. A rack that cannot be cooled is a rack that cannot be filled. When compute supply improves, power is the constraint most likely to become the public talking point next — because you cannot software-update a substation.",
     ],
     color: "#ff6b4a",
     colorSoft: "rgba(255,107,74,0.16)",
@@ -286,4 +288,12 @@ export function getNeighborBottlenecks(slug: string) {
     prev: bottlenecks[(index + bottlenecks.length - 1) % bottlenecks.length],
     next: bottlenecks[(index + 1) % bottlenecks.length],
   };
+}
+
+export function getFeaturedBottleneck() {
+  return bottlenecks.find((item) => item.featured) ?? bottlenecks[0];
+}
+
+export function getMapBottlenecks() {
+  return [...bottlenecks].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
 }

@@ -8,7 +8,7 @@ Click a bottleneck (or finish the 5-question quiz) to get a shareable card. Ther
 
 ## Pages
 
-- `/` — hook + clickable six-node map
+- `/` — hook + **power / electricity as the hero node**, plus the other five clickable bottlenecks
 - `/b/[slug]` — one page per bottleneck, with copy-link card
 - `/quiz` — “Where’s your AI stack most constrained?”
 - `/digest` — free email digest signup (JSON/webhook stub)

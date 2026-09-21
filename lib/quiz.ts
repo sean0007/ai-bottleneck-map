@@ -1,4 +1,4 @@
-import { bottlenecks, type Bottleneck } from "@/lib/bottlenecks";
+import { getMapBottlenecks, type Bottleneck } from "@/lib/bottlenecks";
 
 export type QuizOption = {
   id: string;
@@ -15,8 +15,13 @@ export type QuizQuestion = {
 export const quizQuestions: QuizQuestion[] = [
   {
     id: "q1",
-    prompt: "What would your team struggle to get more of this year?",
+    prompt: "Chip production for data centers can ramp fast. What does not magically keep up?",
     options: [
+      {
+        id: "q1-power",
+        slug: "power",
+        label: "Electrical output, interconnects, and transformers",
+      },
       {
         id: "q1-compute",
         slug: "compute",
@@ -31,11 +36,6 @@ export const quizQuestions: QuizQuestion[] = [
         id: "q1-optics",
         slug: "optics",
         label: "Optical transceivers, lasers, or cluster fabric",
-      },
-      {
-        id: "q1-power",
-        slug: "power",
-        label: "Megawatts, transformers, or a grid interconnection",
       },
       {
         id: "q1-space",
@@ -54,6 +54,11 @@ export const quizQuestions: QuizQuestion[] = [
     prompt: "Which failure mode would stop a new cluster first?",
     options: [
       {
+        id: "q2-power",
+        slug: "power",
+        label: "The utility or substation timeline slips past the lease.",
+      },
+      {
         id: "q2-compute",
         slug: "compute",
         label: "The chips never show up in the quantity you booked.",
@@ -67,11 +72,6 @@ export const quizQuestions: QuizQuestion[] = [
         id: "q2-optics",
         slug: "optics",
         label: "The hall is full of boxes that cannot talk to each other fast enough.",
-      },
-      {
-        id: "q2-power",
-        slug: "power",
-        label: "The utility or substation timeline slips past the lease.",
       },
       {
         id: "q2-servers",
@@ -90,6 +90,11 @@ export const quizQuestions: QuizQuestion[] = [
     prompt: "What do your infrastructure people actually argue about?",
     options: [
       {
+        id: "q3-power",
+        slug: "power",
+        label: "PUE, substations, and whether the campus can energize",
+      },
+      {
         id: "q3-compute",
         slug: "compute",
         label: "Who gets the next accelerator allocation",
@@ -103,11 +108,6 @@ export const quizQuestions: QuizQuestion[] = [
         id: "q3-optics",
         slug: "optics",
         label: "East-west traffic, transceivers, and the network wall",
-      },
-      {
-        id: "q3-power",
-        slug: "power",
-        label: "PUE, substations, and whether the campus can energize",
       },
       {
         id: "q3-space",
@@ -126,6 +126,11 @@ export const quizQuestions: QuizQuestion[] = [
     prompt: "If accelerators showed up tomorrow, what still wouldn’t be ready?",
     options: [
       {
+        id: "q4-power",
+        slug: "power",
+        label: "Power, heat rejection, or the interconnect to the grid",
+      },
+      {
         id: "q4-memory",
         slug: "memory",
         label: "The memory/packaging combo that makes those chips complete",
@@ -134,11 +139,6 @@ export const quizQuestions: QuizQuestion[] = [
         id: "q4-optics",
         slug: "optics",
         label: "The optical fabric between racks",
-      },
-      {
-        id: "q4-power",
-        slug: "power",
-        label: "Power, heat rejection, or the interconnect to the grid",
       },
       {
         id: "q4-servers",
@@ -157,6 +157,11 @@ export const quizQuestions: QuizQuestion[] = [
     prompt: "Which constraint would you want a friend to understand first?",
     options: [
       {
+        id: "q5-power",
+        slug: "power",
+        label: "Power — electricity does not appear because chips were allocated",
+      },
+      {
         id: "q5-compute",
         slug: "compute",
         label: "Compute — the accelerator queue is still real",
@@ -170,11 +175,6 @@ export const quizQuestions: QuizQuestion[] = [
         id: "q5-optics",
         slug: "optics",
         label: "Optics — light is the new copper problem",
-      },
-      {
-        id: "q5-power",
-        slug: "power",
-        label: "Power — the grid can simply say no",
       },
       {
         id: "q5-space",
@@ -196,9 +196,9 @@ export function scoreQuiz(answers: string[]) {
     tallies.set(slug, (tallies.get(slug) ?? 0) + 1);
   }
 
-  let winner = bottlenecks[0];
+  let winner = getMapBottlenecks()[0];
   let best = -1;
-  for (const bottleneck of bottlenecks) {
+  for (const bottleneck of getMapBottlenecks()) {
     const value = tallies.get(bottleneck.slug) ?? 0;
     if (value > best) {
       best = value;

@@ -8,6 +8,6 @@ export const contentType = "image/png";
 export default function Image() {
   return renderOgCard({
     title: SITE_TAGLINE,
-    body: "Free interactive map of compute, memory, optics, power, space, and servers. Educational only.",
+    body: "Hero bottleneck: electricity. Then compute, memory, optics, space, and servers. Educational only.",
   });
 }

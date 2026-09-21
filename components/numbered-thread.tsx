@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { bottlenecks } from "@/lib/bottlenecks";
+import { getMapBottlenecks } from "@/lib/bottlenecks";
 
 export function NumberedThread() {
   return (
     <ol className="space-y-0 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-panel/60">
-      {bottlenecks.map((item) => (
+      {getMapBottlenecks().map((item) => (
         <li key={item.slug}>
           <Link
             href={`/b/${item.slug}`}
@@ -17,7 +17,14 @@ export function NumberedThread() {
               {item.number}
             </span>
             <span>
-              <span className="block font-medium text-foreground">{item.title}</span>
+              <span className="block font-medium text-foreground">
+                {item.title}
+                {item.featured ? (
+                  <span className="ml-2 font-mono text-[10px] tracking-[0.18em] text-[#ff6b4a] uppercase">
+                    Hero
+                  </span>
+                ) : null}
+              </span>
               <span className="mt-1 block max-w-2xl text-sm leading-relaxed text-muted">
                 {item.threadLine}
               </span>
