@@ -19,6 +19,11 @@ export function ShareableCard({
 
   return (
     <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
+        <NativeShare title={`${bottleneck.title} · AI Bottleneck Map`} text={shareText} url={path} />
+        <CopyLink url={path} />
+        <CopyLink url={path} text={shareText} label="Copy summary" />
+      </div>
       <article
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d12] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-8"
         style={{ boxShadow: `0 30px 80px rgba(0,0,0,0.45), inset 4px 0 0 ${bottleneck.color}` }}
@@ -53,11 +58,6 @@ export function ShareableCard({
           discussions. {DISCLAIMER_SHORT}
         </p>
       </article>
-      <div className="flex flex-wrap gap-2">
-        <NativeShare title={`${bottleneck.title} · AI Bottleneck Map`} text={shareText} url={path} />
-        <CopyLink url={path} />
-        <CopyLink url={path} text={shareText} label="Copy summary" />
-      </div>
     </div>
   );
 }

@@ -10,8 +10,8 @@ const links = [
 export function SiteHeader() {
   return (
     <header className="border-b border-line/80">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-        <Link href="/" className="group flex items-baseline gap-2">
+      <div className="mx-auto flex w-full max-w-6xl min-w-0 flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <Link href="/" className="flex shrink-0 items-baseline gap-2">
           <span className="font-mono text-[11px] tracking-[0.22em] text-amber uppercase">
             Free
           </span>
@@ -19,7 +19,7 @@ export function SiteHeader() {
             AI Bottleneck Map
           </span>
         </Link>
-        <nav className="flex items-center gap-1 text-sm text-muted sm:gap-3">
+        <nav className="flex flex-wrap items-center gap-1 text-sm text-muted sm:gap-3">
           {links.map((link) => (
             <Link
               key={link.href}
