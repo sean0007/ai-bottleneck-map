@@ -14,9 +14,9 @@ export default function Home() {
           The AI boom isn’t just chips — it’s the bottlenecks.
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          Elon Musk’s public version of the bind: data-center chip production can
-          ramp, while electrical output outside China stays relatively flat.
-          This map treats{" "}
+          Elon Musk’s sarcastic public line: chip production for data centers can
+          scale exponentially, while electrical output outside China is relatively
+          flat. There is no magical electricity fairy. This map treats{" "}
           <Link href="/b/power" className="text-foreground underline decoration-[#ff6b4a]/70 underline-offset-4">
             power / electricity
           </Link>{" "}

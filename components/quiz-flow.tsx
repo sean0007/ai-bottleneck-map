@@ -82,7 +82,7 @@ export function QuizFlow() {
   return (
     <div className="space-y-8">
       <p className="font-mono text-[11px] tracking-[0.28em] text-amber uppercase">
-        Where’s your AI stack most constrained?
+        Start with electricity · then the rest of the stack
       </p>
       <div className="flex items-end justify-between gap-4">
         <p className="font-mono text-[11px] tracking-[0.28em] text-muted uppercase">

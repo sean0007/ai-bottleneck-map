@@ -151,13 +151,13 @@ export const bottlenecks: Bottleneck[] = [
     title: "Power",
     shortTitle: "Power",
     featured: true,
-    threadLine: "Chip production can ramp. Electricity does not appear because a cluster was funded.",
+    threadLine: "There is no magical electricity fairy. Chips can scale exponentially; the grid cannot.",
     oneLiner:
-      "Accelerators can be ordered on a factory calendar. Megawatts, transformers, and interconnection queues cannot. Electrical supply is the bind that does not care about a GPU keynote.",
+      "Elon Musk’s public mismatch: data-center chip production can scale exponentially, while electrical output outside China is relatively flat. Megawatts do not appear because accelerators were allocated.",
     whyHeadline: "Why power — electricity — is the hero bottleneck",
     why: [
-      "Public remarks from Elon Musk have framed a mismatch that keeps showing up in AI-infrastructure talk: chip production for data centers can scale on a manufacturing curve, while electrical output — especially outside China — stays relatively flat. The cluster still needs a grid that exists in the physical world.",
-      "AI halls draw continuous, dense electricity and dump it as heat. Land with fiber is not enough; the site needs a path to generation, transmission, substations, and transformers that can be delivered on a human timescale. There is no spare electricity that materializes because chips were allocated.",
+      "The line that keeps getting clipped from Elon Musk’s public remarks is sarcastic on purpose: there is no magical electricity fairy. Chip production for data centers can scale on an exponential factory curve. Electrical output outside China is relatively flat. That is a physical supply story, not a ticker thesis.",
+      "AI halls draw continuous, dense electricity and dump it as heat. Land with fiber is not enough; the site needs a path to generation, transmission, substations, and transformers that can be delivered on a human timescale. Accelerators can be ordered. Interconnection queues cannot.",
       "Interconnection queues and high-voltage equipment are industrial products with long lead times. Public utility and developer commentary often treats “we leased the land” as the beginning of the power story, not the end.",
       "Cooling is part of the same node on this map: liquid loops, heat rejection, and the electrical gear that feeds them. A rack that cannot be cooled is a rack that cannot be filled. When compute supply improves, power is the constraint most likely to become the public talking point next — because you cannot software-update a substation.",
     ],

@@ -15,12 +15,12 @@ export type QuizQuestion = {
 export const quizQuestions: QuizQuestion[] = [
   {
     id: "q1",
-    prompt: "Chip production for data centers can ramp fast. What does not magically keep up?",
+    prompt: "Chip production for data centers can scale exponentially. What does not arrive via a magical electricity fairy?",
     options: [
       {
         id: "q1-power",
         slug: "power",
-        label: "Electrical output, interconnects, and transformers",
+        label: "Electrical output — especially outside China — plus interconnects and transformers",
       },
       {
         id: "q1-compute",
@@ -159,7 +159,7 @@ export const quizQuestions: QuizQuestion[] = [
       {
         id: "q5-power",
         slug: "power",
-        label: "Power — electricity does not appear because chips were allocated",
+        label: "Power — there is no magical electricity fairy",
       },
       {
         id: "q5-compute",

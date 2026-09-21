@@ -31,11 +31,12 @@ export function BottleneckMap() {
           </div>
           <div className="mt-4 max-w-3xl">
             <h2 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl">
-              Chip production can ramp. The grid does not.
+              There is no magical electricity fairy.
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
-              {featured.threadLine} Click for why electricity binds — and which
-              public names get cited in that discussion.
+              Chip production for data centers can scale exponentially.
+              Electrical output outside China is relatively flat. Click the
+              hero node — educational, not a buy list.
             </p>
           </div>
           <span className="mt-6 font-mono text-[11px] tracking-[0.18em] text-foreground/80 uppercase group-hover:text-foreground">

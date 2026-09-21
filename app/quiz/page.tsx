@@ -6,7 +6,7 @@ import { QuizFlow } from "@/components/quiz-flow";
 export const metadata: Metadata = {
   title: "Where’s your AI stack most constrained?",
   description:
-    "Five questions. One shareable educational result: compute, memory, optics, power, space, or servers. Not investment advice.",
+    "Five questions, opening on electricity vs exponential chip production. Shareable educational result. Not investment advice.",
 };
 
 export default function QuizPage() {
