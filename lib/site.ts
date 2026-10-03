@@ -28,3 +28,15 @@ export function getSiteUrl() {
   }
   return "http://localhost:3000";
 }
+
+/** Other free tools by the same maker, shown in the footer. */
+export const SIBLING_TOOLS = [
+  { href: "https://fund-fix-flee.vercel.app", label: "Founder Scorecard" },
+  { href: "https://japan-trip-brain.vercel.app", label: "Japan Trip Brain" },
+  { href: "https://hotel-ota-calculator.vercel.app", label: "Hotel OTA Calculator" },
+  { href: "https://saas-bill-cutter.vercel.app", label: "SaaS Bill Cutter" },
+  { href: "https://ads-risk-check.vercel.app", label: "Ads Risk Check" },
+  { href: "https://faceless-yt-risk-check.vercel.app", label: "Faceless YT Reality Check" },
+  { href: "https://appgate-pack.vercel.app/check", label: "AppGate Pack" },
+  { href: "https://viral-attention-map.vercel.app", label: "Viral Attention Map" },
+] as const;

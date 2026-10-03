@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DISCLAIMER_SHORT } from "@/lib/site";
+import { DISCLAIMER_SHORT, SIBLING_TOOLS } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -19,6 +19,20 @@ export function SiteFooter() {
           <Link href="/legal/disclaimer" className="hover:text-foreground">
             Disclaimer
           </Link>
+        </div>
+        <div className="flex flex-wrap gap-x-5 gap-y-2">
+          <span className="text-muted/80">More free tools:</span>
+          {SIBLING_TOOLS.map((tool) => (
+            <a
+              key={tool.href}
+              href={tool.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground"
+            >
+              {tool.label}
+            </a>
+          ))}
         </div>
         <p className="font-mono text-xs tracking-wide text-muted/80">
           No payments. No WhatsApp groups. Educational map only.
