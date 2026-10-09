@@ -1,5 +1,7 @@
 export const SITE_NAME = "AI Bottleneck Map";
 
+export const PUBLIC_URL = "https://ai-bottleneck-map.vercel.app";
+
 export const SITE_TAGLINE =
   "The AI boom isn’t just chips — it’s the bottlenecks.";
 
@@ -20,19 +22,20 @@ export const COMPANY_EDUCATION_LABEL =
 export function getSiteUrl() {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;
   if (explicit) return explicit.replace(/\/$/, "");
+  if (process.env.VERCEL_ENV === "production") return PUBLIC_URL;
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-  return "http://localhost:3000";
+  return PUBLIC_URL;
 }
 
 /** Other free tools by the same maker, shown in the footer. */
 export const SIBLING_TOOLS = [
   { href: "https://pitch-roast.vercel.app", label: "Pitch Roast" },
-  { href: "https://fund-fix-flee.vercel.app", label: "Founder Scorecard" },
+  { href: "https://fund-raise-flee.vercel.app", label: "Founder Scorecard" },
   { href: "https://japan-trip-brain.vercel.app", label: "Japan Trip Brain" },
   { href: "https://hotel-ota-calculator.vercel.app", label: "Hotel OTA Calculator" },
   { href: "https://saas-bill-cutter.vercel.app", label: "SaaS Bill Cutter" },
@@ -40,4 +43,5 @@ export const SIBLING_TOOLS = [
   { href: "https://faceless-yt-risk-check.vercel.app", label: "Faceless YT Reality Check" },
   { href: "https://appgate-pack.vercel.app/check", label: "AppGate Pack" },
   { href: "https://viral-attention-map.vercel.app", label: "Viral Attention Map" },
+  { href: "https://japan-tax-free-refund.vercel.app", label: "Japan Tax-Free Refund" },
 ] as const;

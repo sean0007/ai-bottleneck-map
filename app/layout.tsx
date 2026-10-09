@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    "Free interactive educational map of AI infrastructure bottlenecks: compute, memory/HBM, optics, power, space/satellite, and servers. Not investment advice.",
+    "Free interactive educational map of AI infrastructure bottlenecks: compute, memory/HBM, optics, power, space/satellite, and servers. Click a node or take the quiz.",
   openGraph: {
     title: SITE_NAME,
     description: SITE_TAGLINE,
