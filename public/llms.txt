@@ -51,3 +51,5 @@ Not investment advice. Not a recommendation to buy or sell. Educational only. Co
 - AppGate Pack: https://appgate-pack.vercel.app/check
 - Viral Attention Map: https://viral-attention-map.vercel.app
 - Japan Tax-Free Refund: https://japan-tax-free-refund.vercel.app
+- Japan Visa Fee Calculator: https://japan-visa-fee.vercel.app
+- Japan Luggage Check: https://japan-luggage.vercel.app
