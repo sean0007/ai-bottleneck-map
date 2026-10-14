@@ -53,3 +53,4 @@ Not investment advice. Not a recommendation to buy or sell. Educational only. Co
 - Japan Tax-Free Refund: https://japan-tax-free-refund.vercel.app
 - Japan Visa Fee Calculator: https://japan-visa-fee.vercel.app
 - Japan Luggage Check: https://japan-luggage.vercel.app
+- Kyushu Travel Discount: https://kyushu-travel-discount.vercel.app
